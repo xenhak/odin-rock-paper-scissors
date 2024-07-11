@@ -30,22 +30,33 @@ const playGame = () => {
       computerScore++;
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
     } else if (humanChoice === computerChoice) {
-      console.log("It's a tie!");
+      console.log("Draw!");
     } else {
       humanScore++;
       console.log(`You won! ${humanChoice} beats ${computerChoice}`);
     }
   };
 
-  //   const humanSelection = getHumanChoice();
+  const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
 
   playRound(humanSelection, computerSelection);
 
-  console.log(humanScore);
-  console.log(computerScore);
+  return { humanScore, computerScore };
 };
 
 for (i = 0; i < 5; i++) {
   playGame();
 }
+
+const displayWinner = (finalHumanScore, finalComputerScore) => {
+  if (finalComputerScore > finalHumanScore) {
+    console.log(`The winner is: Computer with ${finalComputerScore} points`);
+  } else if (computerScore === humanScore) {
+    console.log("It's a tie!!!");
+  } else {
+    console.log(`The winner is: Human with ${finalHumanScore} points`);
+  }
+};
+
+displayWinner(humanScore, computerScore);
