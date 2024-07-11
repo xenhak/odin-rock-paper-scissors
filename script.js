@@ -1,16 +1,20 @@
 const getComputerChoice = () => {
-  let randomChoice = Math.floor(Math.random() * 3);
+  let computerChoice = Math.floor(Math.random() * 3);
 
-  if (randomChoice === 0) {
-    randomChoice = "rock";
-  } else if (randomChoice === 1) {
-    randomChoice = "paper";
+  if (computerChoice === 0) {
+    computerChoice = "rock";
+  } else if (computerChoice === 1) {
+    computerChoice = "paper";
   } else {
-    randomChoice = "scissors";
+    computerChoice = "scissors";
   }
 
-  return randomChoice;
+  return computerChoice;
 };
 
-// getComputerChoice();
-console.log(getComputerChoice());
+getComputerChoice();
+
+const getHumanChoice = () => {
+  let humanChoice = prompt("rock | paper | scissors");
+  return humanChoice;
+};
