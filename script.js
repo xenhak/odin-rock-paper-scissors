@@ -52,7 +52,7 @@ for (i = 0; i < 5; i++) {
 const displayWinner = (finalHumanScore, finalComputerScore) => {
   if (finalComputerScore > finalHumanScore) {
     console.log(`The winner is: Computer with ${finalComputerScore} points`);
-  } else if (computerScore === humanScore) {
+  } else if (finalComputerScore === finalHumanScore) {
     console.log("It's a tie!!!");
   } else {
     console.log(`The winner is: Human with ${finalHumanScore} points`);
